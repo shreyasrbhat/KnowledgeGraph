@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_neomodel',
     'core',
 ]
 
@@ -82,8 +83,17 @@ DATABASES = {
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
     }
+
 }
 
+###Neo4j configuration
+NEO4J_USERNAME = os.environ.get('GRAPHDB_USERNAME')
+NEO4J_PASSWORD = os.environ.get('GRAPHDB_PASSWORD')
+NEOMODEL_NEO4J_BOLT_URL ='bolt://{}:{}@neohost:7687'.format(NEO4J_USERNAME, NEO4J_PASSWORD)
+NEOMODEL_NEO4J_SIGNALS = True
+NEOMODEL_NEO4J_FORCE_TIMEZONE = False
+NEOMODEL_NEO4J_ENCRYPTED_CONNECTION = True
+NEOMODEL_NEO4J_MAX_POOL_SIZE = 50
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

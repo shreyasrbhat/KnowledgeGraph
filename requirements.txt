@@ -1,4 +1,7 @@
 Django>=2.2.6,<2.3.0
 djangorestframework>=3.10.3,<3.11.0
+django-neomodel==0.0.4
 psycopg2>=2.7.5,<2.8.0
 flake8>=3.6.0,<3.7.0
+neomodel>=3.3.0,<3.3.3
+
